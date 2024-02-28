@@ -16,8 +16,10 @@ public class Baralho {
                     Carta carta = new Carta(listaNomes[i],listaNaipes[n]);
                     cartas.add(carta);
                 }else if (listaNomes[i] == Nome.CORINGA && listaNaipes[n] == Naipe.CORINGA) {
-                    Carta carta = new Carta(listaNomes[i],listaNaipes[n]);
-                    cartas.add(carta);
+                    for (int q = 0; q < 4; q ++){
+                        Carta carta = new Carta(listaNomes[i],listaNaipes[n]);
+                        cartas.add(carta);
+                    }
                 }
             }
         }
