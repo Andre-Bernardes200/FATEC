@@ -1,6 +1,7 @@
 package baralho.models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Baralho {
@@ -27,5 +28,27 @@ public class Baralho {
 
     public List<Carta> getCartas (){
         return cartas;
+    }
+
+    public void embaralhar(List<Carta> baralho){
+        int carta1;
+        int carta2;
+        Carta cartaSeguranca; // onde guarda a carta 1 na troca
+
+        for(int i =0; i < 100;i++){
+            carta1 = (int) (Math.random() * baralho.size());
+            carta2 = (int) (Math.random() * baralho.size());
+
+            cartaSeguranca = baralho.get(carta1);
+
+            baralho.set(carta1,baralho.get(carta2));
+            baralho.set(carta2,cartaSeguranca);
+
+        }
+    }
+
+    public void imprimirBaralho(List<Carta> baralho){
+        baralho.stream()
+                .forEach(c -> System.out.println(c.getNome() + ", " + c.getNaipe()));
     }
 }
