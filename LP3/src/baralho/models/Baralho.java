@@ -1,8 +1,6 @@
 package baralho.models;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Baralho {
 
@@ -48,7 +46,38 @@ public class Baralho {
     }
 
     public void imprimirBaralho(List<Carta> baralho){
-        baralho.stream()
-                .forEach(c -> System.out.println(c.getNome() + ", " + c.getNaipe()));
+        for(int i =0; i < baralho.size(); i++){
+            if(Objects.isNull(baralho.get(i))){
+                System.out.println("null, null");
+            }else {
+                System.out.println(baralho.get(i).getNome() + ", " + baralho.get(i).getNaipe());
+            }
+        }
+        System.out.println("\n\n");
+    }
+
+    public Optional<Carta> distribuirCarta(List<Carta> baralho){
+
+        int indiceTroca = baralho.size()-1;
+
+        Optional<Carta> carta = Optional.of(baralho.get(indiceTroca));
+
+        if (carta.isPresent()){
+            baralho.set(indiceTroca,null);
+            return carta;
+        }else {
+            return null;
+        }
+    }
+
+    public boolean hasCarta(List<Carta> baralho){
+
+        Optional<List<Carta>> cartas = Optional.of(baralho);
+
+        if (cartas.isPresent()){
+            return true;
+        }else {
+            return false;
+        }
     }
 }
