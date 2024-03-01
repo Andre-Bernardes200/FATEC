@@ -16,11 +16,11 @@ public class Main {
         baralho.embaralhar(cartas);
         baralho.imprimirBaralho(cartas);
 
-        for( int i = 0; i < cartas.size(); i++){
-            baralho.embaralhar(cartas);
-            baralho.distribuirCarta(cartas);
+        for( int i = 1; cartas.size() != 10 ; i++){
+            baralho.distribuirCarta(cartas,cartas.size()-1);
         }
-
         baralho.imprimirBaralho(cartas);
+
+        System.out.println(baralho.hasCarta(cartas));
     }
 }
