@@ -16,8 +16,11 @@ public class Main {
         baralho.embaralhar(cartas);
         baralho.imprimirBaralho(cartas);
 
-        baralho.distribuirCarta(cartas);
-        baralho.embaralhar(cartas);
+        for( int i = 0; i < cartas.size(); i++){
+            baralho.embaralhar(cartas);
+            baralho.distribuirCarta(cartas);
+        }
+
         baralho.imprimirBaralho(cartas);
     }
 }

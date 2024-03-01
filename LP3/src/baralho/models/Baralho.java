@@ -56,13 +56,13 @@ public class Baralho {
         System.out.println("\n\n");
     }
 
-    public Optional<Carta> distribuirCarta(List<Carta> baralho){
+    public Carta distribuirCarta(List<Carta> baralho){
 
         int indiceTroca = baralho.size()-1;
 
-        Optional<Carta> carta = Optional.of(baralho.get(indiceTroca));
+        Carta carta = baralho.get(indiceTroca);
 
-        if (carta.isPresent()){
+        if (carta != null){
             baralho.set(indiceTroca,null);
             return carta;
         }else {
