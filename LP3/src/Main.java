@@ -8,16 +8,12 @@ public class Main {
     public static void main(String[] args) {
         Baralho baralho = new Baralho();
 
-        List<Carta> cartas = new ArrayList<>();
-
-        cartas = baralho.getCartas();
+        Carta[] cartas = baralho.getCartas();
 
         baralho.embaralhar(cartas);
-        baralho.imprimirBaralho(cartas);
 
-        for( int i = 1; cartas.size() != 10 ; i++){
-            baralho.distribuirCarta(cartas,cartas.size()-1);
-        }
+
+        baralho.distribuirCarta(cartas);
         baralho.imprimirBaralho(cartas);
 
         System.out.println(baralho.hasCarta(cartas));
