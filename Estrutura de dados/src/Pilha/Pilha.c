@@ -65,7 +65,7 @@
 	    celula *lista = malloc(sizeof(celula));
 	    lista->seg = NULL;
 
-        char listaSting[] = "((})";
+        char listaSting[] = "(())";
         int tamanho = strlen(listaSting);
 
         int valor = certo(lista,listaSting,tamanho);
