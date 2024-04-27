@@ -21,13 +21,15 @@
         }
             
 
-        int remove_celula (celula **lst){
+        void remove_celula (celula **inicio, celula **fim){
                 celula *lixo;
-                lixo = *lst;
-                int x = lixo->conteudo;
-                *lst = lixo->seg;
-                free(lixo);
-                return x;
+                lixo = *inicio;
+                if(*inicio == *fim){
+                    free(lixo);
+                }else{
+                    *inicio = (*inicio)->seg;
+                    free(lixo);
+                }
         }
 
         void main() {
@@ -39,5 +41,7 @@
             for (int i = 0; i < 10; i++) {
                 insere(&inicio, &fim, i);
             }
-
+            for(int i = 0 ; i <10; i++){
+                remove_celula(&inicio,&fim);
+            }
         }
