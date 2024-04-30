@@ -1,4 +1,4 @@
-package odenacao;
+package ordenacao;
 
 public class Insercao {
     public int[] insere(){
