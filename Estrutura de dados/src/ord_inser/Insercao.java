@@ -1,4 +1,4 @@
-package ordenacao;
+package ord_inser;
 
 public class Insercao {
     public int[] insere(){
@@ -10,13 +10,20 @@ public class Insercao {
             int j;
             int troca = 0;
             int k = i;
-            for (j = i-1; j > 0; j--) {
+
+            for (j = i-1; j >= 0; j--) {
                 if (fila[k] < fila[j]) {
                     troca = fila[k];
                     fila[k] = fila[j];
                     k--;
+                    j--;
                 }if(troca > fila[j]){
-                    fila[j] = troca;
+                    fila[k] = troca;
+                    troca = 0;
+                }
+                if(troca > 0){
+                    fila[k] = fila[j];
+                    k--;
                 }
             }
         }

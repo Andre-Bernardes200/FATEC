@@ -1,5 +1,5 @@
-import java.util.Arrays;
-import java.util.stream.Collectors;
+package Exercicios;
+
 
 public class NumInvertido {
 
@@ -14,6 +14,7 @@ public class NumInvertido {
             return num[0];
         }else{
             soma = vetor[n] + soma(num);
+            return soma;
         }
     }
 

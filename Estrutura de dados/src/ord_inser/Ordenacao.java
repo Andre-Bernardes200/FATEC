@@ -1,3 +1,5 @@
+package ord_inser;
+
 public class Ordenacao {
 
     public int[] ordena(){

@@ -1,4 +1,4 @@
-package ordenacao;
+package ord_inser;
 
 import java.util.Arrays;
 

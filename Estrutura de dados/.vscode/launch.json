@@ -2,14 +2,21 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "ord_inser.Main",
+      "projectName": ""
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/andre/3Sem/Estrutura de dados",
-      "program": "/home/andre/3Sem/Estrutura de dados/build/Debug/outDebug",
+      "cwd": "/home/andre/3Sem/Estrutura de dados/src/ord/inser",
+      "program": "/home/andre/3Sem/Estrutura de dados/src/ord/inser/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
