@@ -15,8 +15,6 @@ public class Insercao {
                 if (fila[k] < fila[j]) {
                     troca = fila[k];
                     fila[k] = fila[j];
-                    k--;
-                    j--;
                 }if(troca > fila[j]){
                     fila[k] = troca;
                     troca = 0;
