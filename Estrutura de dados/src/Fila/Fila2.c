@@ -54,5 +54,5 @@
 
             insere(&inicio,&fim,30);
             int num = inicio->conteudo;
-            printf("%d",num);
+            printf("\nA pessoa número %d entrou na fila.",num);
         }
