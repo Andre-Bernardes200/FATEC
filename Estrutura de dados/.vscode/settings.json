@@ -60,5 +60,6 @@
     ".fantomasignore": "ignore",
     "Fila.C": "cpp"
   },
-  "java.debug.settings.onBuildFailureProceed": true
+  "java.debug.settings.onBuildFailureProceed": true,
+  "C_Cpp.errorSquiggles": "disabled"
 }

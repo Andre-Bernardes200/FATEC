@@ -21,15 +21,20 @@
         }
             
 
-        void remove_celula (celula **inicio, celula **fim){
+        int remove_celula (celula **inicio, celula **fim){
                 celula *lixo;
                 lixo = *inicio;
+                int cont = lixo->conteudo;
                 if(*inicio == *fim){
+                    *inicio = NULL;
+                    *fim = NULL;
                     free(lixo);
                 }else{
                     *inicio = (*inicio)->seg;
                     free(lixo);
+                    lixo = NULL
                 }
+                return cont;
         }
 
         void main() {
@@ -41,7 +46,12 @@
             for (int i = 0; i < 10; i++) {
                 insere(&inicio, &fim, i);
             }
-            for(int i = 0 ; i <10; i++){
-                remove_celula(&inicio,&fim);
-            }
+
+            int x = remove_celula(&inicio,&fim);
+            printf("A pessoa com o número %d saiu da fila",x);
+            printf("\n");
+
+            insere(&inicio,&fim,30);
+            int num = inicio->conteudo;
+            printf(num);
         }

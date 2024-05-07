@@ -1,4 +1,4 @@
-package ord_inser;
+package ordernacao;
 
 public class Ordenacao {
 
