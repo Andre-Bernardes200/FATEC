@@ -28,12 +28,11 @@
                 if(*inicio == *fim){
                     *inicio = NULL;
                     *fim = NULL;
-                    free(lixo);
                 }else{
                     *inicio = (*inicio)->seg;
-                    free(lixo);
                     lixo = NULL;
                 }
+                free(lixo);
                 return cont;
         }
 
