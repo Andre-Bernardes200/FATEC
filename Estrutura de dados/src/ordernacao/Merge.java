@@ -19,7 +19,5 @@ public class Merge {
         List<Integer> direita = arrumar(inicio,meio,merge);
         List<Integer> esquerda = arrumar(meio,fim,merge);
 
-
-
     }
 }
