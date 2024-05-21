@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] fila = new int[]{50, 54, 82, 62, 74, 99, 61, 52, 64, 89, 58};
+        int[] fila = new int[]{50, 54, 82, 62, 74, 58, 61, 52, 64, 89, 44};
 
 //        Ordenacao ordenacao = new Ordenacao();
 //
@@ -13,6 +13,7 @@ public class Main {
         Insercao insercao = new Insercao();
         Shell shel = new Shell();
 
-        System.out.print(Arrays.toString(shel.shellSort(fila)));
+        Quick quick = new Quick();
+        System.out.print(Arrays.toString(quick.quickSort(fila,0,fila.length-1)));
     }
 }
