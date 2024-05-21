@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AreaChecker/AreaChecker.iml" filepath="$PROJECT_DIR$/AreaChecker/AreaChecker.iml" />
       <module fileurl="file://$PROJECT_DIR$/LP3.iml" filepath="$PROJECT_DIR$/LP3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Whats/Whats.iml" filepath="$PROJECT_DIR$/Whats/Whats.iml" />
     </modules>
   </component>
 </project>
