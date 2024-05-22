@@ -11,7 +11,7 @@ public class ItemCompra implements Calculavel {
     private Produto produto;
     private double desconto;
 
-    public ItemCompra(int quantidade, Produto produto, double desconto) {
+    public ItemCompra(Produto produto, double desconto) {
         this.produto = produto;
         this.desconto = desconto;
     }
