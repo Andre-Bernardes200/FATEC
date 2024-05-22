@@ -7,4 +7,9 @@ public class MsgAudio extends Mensagem{
         super(destinatario,envio,conteudo);
         this.duracao = duracao;
     }
+
+    @Override
+    Mensagem sendMenssage(String mensagem) {
+        return this;
+    }
 }

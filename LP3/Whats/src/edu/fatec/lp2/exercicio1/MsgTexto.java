@@ -8,4 +8,9 @@ public class MsgTexto extends Mensagem {
         super(destinatario,envio,conteudo);
         this.numChar = numChar;
     }
+
+    @Override
+    Mensagem sendMenssage(String mensagem) {
+        return this;
+    }
 }

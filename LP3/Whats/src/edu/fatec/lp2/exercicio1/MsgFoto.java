@@ -7,4 +7,9 @@ public class MsgFoto extends Mensagem{
         super(destinatario,envio,conteudo);
         this.tamanho = tamanho;
     }
+
+    @Override
+    Mensagem sendMenssage(String mensagem) {
+        return this;
+    }
 }

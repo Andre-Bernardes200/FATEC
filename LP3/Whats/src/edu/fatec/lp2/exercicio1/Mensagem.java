@@ -1,5 +1,7 @@
 package edu.fatec.lp2.exercicio1;
 
+import java.util.List;
+
 public abstract class Mensagem{
 
     private Contatinho destinatario;
@@ -12,6 +14,7 @@ public abstract class Mensagem{
         this.conteudo = conteudo;
     }
 
+    @Override
     public String toString(){
         String mensagem =  """
                 Destinatário: %s
@@ -19,4 +22,6 @@ public abstract class Mensagem{
                 Conteúdo: %s""".formatted(destinatario,horaEnvio,conteudo);
         return mensagem;
     }
+
+    abstract Mensagem sendMenssage(String mensagem);
 }
