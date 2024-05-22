@@ -30,7 +30,7 @@ public class ListaCompra implements Calculavel{
         int qtd = itensCompra.length;
         double valor = 0;
         for (int i = 0; i < qtd; i++) {
-            valor =+ itensCompra[i].getProduto().getPreco() * itensCompra[i].getQuantidade();
+            valor =+ itensCompra[i].calcularPreco();
         }
 
         return valor;
