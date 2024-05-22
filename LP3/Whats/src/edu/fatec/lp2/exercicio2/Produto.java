@@ -20,6 +20,14 @@ public class Produto {
 
     @Override
     public String toString() {
+        String produto = """
+                nome: %s
+                unidade: %s
+                descricao: %s
+                preco: %.2f
+                descontoMaximo: %.2f
+                supermercado: %s
+                """.formatted(nome,unidade,descricao,preco,descontoMaximo,supermercado.getNome());
         return toString();
     }
 }
