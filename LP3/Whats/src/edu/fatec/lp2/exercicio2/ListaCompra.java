@@ -16,11 +16,13 @@ public class ListaCompra implements Calculavel{
 
     public void incluir(ItemCompra item) {
         int qtd = itensCompra.length;
-        if(qtd < qtdMax) {
-            itensCompra[qtd] = item;
-        }
-        else {
-            System.out.print("Erro ao incluir o item de compra, passou a quantidade máxima");
+        for(int i = 0; i < qtd; i++) {
+            if(qtd < qtdMax) {
+                itensCompra[i] = item;
+            }
+            else {
+                System.out.print("Erro ao incluir o item de compra, passou a quantidade máxima");
+            }
         }
     }
 
