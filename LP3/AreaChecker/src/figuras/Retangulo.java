@@ -2,7 +2,7 @@ package figuras;
 
 import inteface.Calculable;
 
-public class Retangulo implements Calculable {
+public class  Retangulo implements Calculable {
 
     private double base;
     private double altura;
