@@ -27,20 +27,16 @@ no* insere(no* arvore, int valor) {
     }
     if (valor < arvore->valor) {
         arvore->esq = insere(arvore->esq, valor);
-    } else {
+    } else if (valor > arvore->valor) {
         arvore->dir = insere(arvore->dir, valor);
     }
     return arvore;
 }
 
-no* removerMaiorDentreMenores(no* arvore) {
-    if (arvore == NULL) return NULL;
-    if (arvore->dir == NULL) {
-        no* esq = arvore->esq;
-        free(arvore);
-        return esq;
+no* encontraMaior(no* arvore) {
+    while (arvore->dir != NULL) {
+        arvore = arvore->dir;
     }
-    arvore->dir = removerMaiorDentreMenores(arvore->dir);
     return arvore;
 }
 
@@ -62,12 +58,9 @@ no* remove_no(no* arvore, int valor) {
             free(arvore);
             return temp;
         }
-        no* maior = arvore->esq;
-        while (maior->dir != NULL) {
-            maior = maior->dir;
-        }
+        no* maior = encontraMaior(arvore->esq);
         arvore->valor = maior->valor;
-        arvore->esq = removerMaiorDentreMenores(arvore->esq);
+        arvore->esq = remove_no(arvore->esq, maior->valor);
     }
     return arvore;
 }
@@ -75,8 +68,6 @@ no* remove_no(no* arvore, int valor) {
 int main() {
     no* arvore = NULL;
     int i, valorParaRemover;
-
-    srand(time(NULL));
 
     // Inserindo até 20 nós com valores aleatórios na árvore
     for (i = 0; i < 20; i++) {
@@ -92,7 +83,6 @@ int main() {
     scanf("%d", &valorParaRemover);
     arvore = remove_no(arvore, valorParaRemover);
 
-    printf("Árvore após remoção do nó com valor %d:\n", valorParaRemover);
     varreduraErd(arvore);
 
     return 0;
