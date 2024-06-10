@@ -12,8 +12,9 @@ public class Main {
 
         Insercao insercao = new Insercao();
         Shell shel = new Shell();
-
         Quick quick = new Quick();
-        System.out.print(Arrays.toString(quick.quickSort(fila,0,fila.length-1)));
+        Merge merge = new Merge();
+
+        System.out.print(Arrays.toString(merge.mergeSort(0,fila.length,fila)));
     }
 }
