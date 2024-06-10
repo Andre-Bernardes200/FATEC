@@ -40,34 +40,55 @@ no* encontraMaior(no* arvore) {
     return arvore;
 }
 
-no* remove_no(no* arvore, int valor) {
+no* remove_no(no* arvore, no* remover) {
     if (arvore == NULL) {
         return NULL;
     }
-    if (valor < arvore->valor) {
-        arvore->esq = remove_no(arvore->esq, valor);
-    } else if (valor > arvore->valor) {
-        arvore->dir = remove_no(arvore->dir, valor);
-    } else {
+
+    if (arvore == remover) {
         if (arvore->esq == NULL) {
-            no* temp = arvore->dir;
-            free(arvore);
-            return temp;
-        } else if (arvore->dir == NULL) {
-            no* temp = arvore->esq;
-            free(arvore);
-            return temp;
+            return arvore->dir;
         }
-        no* maior = encontraMaior(arvore->esq);
-        arvore->valor = maior->valor;
-        arvore->esq = remove_no(arvore->esq, maior->valor);
+
+        no* maiorEsquerda = arvore->esq;
+        no* paiMaiorEsquerda = NULL;
+
+        while (maiorEsquerda->dir != NULL) {
+            paiMaiorEsquerda = maiorEsquerda;
+            maiorEsquerda = maiorEsquerda->dir;
+        }
+
+        if (paiMaiorEsquerda != NULL) {
+            paiMaiorEsquerda->dir = maiorEsquerda->esq;
+            maiorEsquerda->esq = arvore->esq;
+        }
+
+        maiorEsquerda->dir = arvore->dir;
+        return maiorEsquerda;
     }
+
+    arvore->esq = remove_no(arvore->esq, remover);
+    arvore->dir = remove_no(arvore->dir, remover);
+
     return arvore;
+}
+
+no* encontrar_no(no* arvore, int valor) {
+    if (arvore == NULL || arvore->valor == valor) {
+        return arvore;
+    }
+
+    if (valor < arvore->valor) {
+        return encontrar_no(arvore->esq, valor);
+    } else {
+        return encontrar_no(arvore->dir, valor);
+    }
 }
 
 int main() {
     no* arvore = NULL;
     int i, valorParaRemover;
+    srand(time(NULL));
 
     // Inserindo até 20 nós com valores aleatórios na árvore
     for (i = 0; i < 20; i++) {
@@ -78,12 +99,18 @@ int main() {
     printf("Árvore após inserções aleatórias:\n");
     varreduraErd(arvore);
 
-    // Removendo um nó aleatório
+    // Removendo um nó especificado pelo usuário
     printf("Digite um valor para remover: ");
     scanf("%d", &valorParaRemover);
-    arvore = remove_no(arvore, valorParaRemover);
+    no* remover = encontrar_no(arvore, valorParaRemover);
 
-    varreduraErd(arvore);
+    if (remover != NULL) {
+        arvore = remove_no(arvore, remover);
+        printf("Árvore após remoção:\n");
+        varreduraErd(arvore);
+    } else {
+        printf("Valor não encontrado na árvore.\n");
+    }
 
     return 0;
 }
