@@ -30,7 +30,7 @@ public class Merge {
                 }
                 lista[i]=temp;
 
-                i++;
+                i++;    
                 j++;
                 meio++;
             }

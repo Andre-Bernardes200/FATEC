@@ -40,37 +40,34 @@ no* encontraMaior(no* arvore) {
     return arvore;
 }
 
-no* remove_no(no* arvore, no* remover) {
-    if (arvore == NULL) {
+no* remove_no(no* remover) {
+    if (remover == NULL) {
         return NULL;
     }
 
-    if (arvore == remover) {
-        if (arvore->esq == NULL) {
-            return arvore->dir;
-        }
-
-        no* maiorEsquerda = arvore->esq;
-        no* paiMaiorEsquerda = NULL;
-
-        while (maiorEsquerda->dir != NULL) {
-            paiMaiorEsquerda = maiorEsquerda;
-            maiorEsquerda = maiorEsquerda->dir;
-        }
-
-        if (paiMaiorEsquerda != NULL) {
-            paiMaiorEsquerda->dir = maiorEsquerda->esq;
-            maiorEsquerda->esq = arvore->esq;
-        }
-
-        maiorEsquerda->dir = arvore->dir;
-        return maiorEsquerda;
+    if(remover->esq == NULL){
+        return remover->dir;
     }
 
-    arvore->esq = remove_no(arvore->esq, remover);
-    arvore->dir = remove_no(arvore->dir, remover);
+    no* noMaior;
+    noMaior = remover->esq;
 
-    return arvore;
+    no* noAnt;
+
+    while (noMaior != NULL)
+    {
+        noAnt = noMaior;
+        noMaior = noMaior->dir;
+    }
+    
+    if(noAnt != NULL){
+        noAnt->dir = noMaior->esq;
+        noMaior->esq = remover->esq;
+    }
+
+    noMaior->dir = remover->dir;
+
+    return noMaior;
 }
 
 no* encontrar_no(no* arvore, int valor) {
@@ -104,13 +101,8 @@ int main() {
     scanf("%d", &valorParaRemover);
     no* remover = encontrar_no(arvore, valorParaRemover);
 
-    if (remover != NULL) {
-        arvore = remove_no(arvore, remover);
-        printf("Árvore após remoção:\n");
-        varreduraErd(arvore);
-    } else {
-        printf("Valor não encontrado na árvore.\n");
-    }
+    arvore = remove_no(remover);
+    printf("valor removido da árvore\n");
 
     return 0;
 }
