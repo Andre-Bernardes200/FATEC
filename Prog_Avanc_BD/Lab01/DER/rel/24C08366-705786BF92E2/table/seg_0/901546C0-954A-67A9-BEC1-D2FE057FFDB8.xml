@@ -1,0 +1,159 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="901546C0-954A-67A9-BEC1-D2FE057FFDB8" schemaObject="1908F73A-4614-D093-1B3A-CA665AAF67FD" name="DEPARTMENTS">
+<sourceConnName>Con_Andre</sourceConnName>
+<sourceObjSchema>C##ANDRE</sourceObjSchema>
+<sourceObjName>DEPARTMENTS</sourceObjName>
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Departments table that shows details of departments where employees 
+         work. Contains 27 rows; references with locations, employees, and job_history tables.]]></commentInRDBMS>
+<ownerDesignName>DER</ownerDesignName>
+<importedID>71087402-3969-5591-0D3F-2BB70C364F1C</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DEPARTMENT_ID" id="6F175242-2883-5CC7-FDB1-196646428270">
+<sourceConnName>Con_Andre</sourceConnName>
+<sourceObjSchema>DEPARTMENTS</sourceObjSchema>
+<sourceObjName>DEPARTMENT_ID</sourceObjName>
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key column of departments table.]]></commentInRDBMS>
+<ownerDesignName>DER</ownerDesignName>
+<importedID>BDFAF07B-BBBC-2AAC-83E1-C72EFD378390</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,4,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPARTMENT_NAME" id="25D05075-8AD5-74B3-4FA5-654BB22E5139">
+<sourceConnName>Con_Andre</sourceConnName>
+<sourceObjSchema>DEPARTMENTS</sourceObjSchema>
+<sourceObjName>DEPARTMENT_NAME</sourceObjName>
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[A not null column that shows name of a department. Administration, 
+         Marketing, Purchasing, Human Resources, Shipping, IT, Executive, Public 
+         Relations, Sales, Finance, and Accounting. ]]></commentInRDBMS>
+<ownerDesignName>DER</ownerDesignName>
+<importedID>9BC3229B-9652-ABFE-CF77-6330630D0413</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>DEPT_NAME_NN</notNullConstraintName>
+</Column>
+<Column name="MANAGER_ID" id="B456E8B5-653F-03B1-7F45-2BF7A31E2754">
+<sourceConnName>Con_Andre</sourceConnName>
+<sourceObjSchema>DEPARTMENTS</sourceObjSchema>
+<sourceObjName>MANAGER_ID</sourceObjName>
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Manager_id of a department. Foreign key to employee_id column of employees table. The manager_id column of the employee table references this column.]]></commentInRDBMS>
+<ownerDesignName>DER</ownerDesignName>
+<importedID>AEA98DCA-78AD-C87D-3C36-7BEDBF751685</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="896B816B-1787-3D37-D636-411BBF033EA1" referredColumn="98D3A979-EE80-5018-AD90-16610DE1CF68"/>
+</associations>
+</Column>
+<Column name="LOCATION_ID" id="C0EE09B3-DE32-C2EB-176F-6EDBE7E6F71D">
+<sourceConnName>Con_Andre</sourceConnName>
+<sourceObjSchema>DEPARTMENTS</sourceObjSchema>
+<sourceObjName>LOCATION_ID</sourceObjName>
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Location id where a department is located. Foreign key to location_id column of locations table.]]></commentInRDBMS>
+<ownerDesignName>DER</ownerDesignName>
+<importedID>87CCD99E-7E18-9F6F-6E01-0DAC6543E3E0</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,4,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FE1C5125-DB91-3B64-EDF1-49CFD809B910" referredColumn="AD95C35E-E11D-9D23-8628-FDB5AE0221D6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="11BC9FBE-A7F8-B947-665F-33A76C280444" name="DEPT_ID_PK">
+<sourceConnName>Con_Andre</sourceConnName>
+<sourceObjSchema>C##ANDRE</sourceObjSchema>
+<sourceObjName>DEPT_ID_PK</sourceObjName>
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<ownerDesignName>DER</ownerDesignName>
+<importedID>81241985-8F79-0FB0-E0C8-FA8977F92A9C</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6F175242-2883-5CC7-FDB1-196646428270"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4C0CF073-AC65-9C62-6612-D210BB569B19" schemaObject="1908F73A-4614-D093-1B3A-CA665AAF67FD" name="DEPT_ID_PK">
+<sourceConnName>Con_Andre</sourceConnName>
+<sourceObjSchema>C##ANDRE</sourceObjSchema>
+<sourceObjName>DEPT_ID_PK</sourceObjName>
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<ownerDesignName>DER</ownerDesignName>
+<importedID>537C1481-D7D1-C78C-9041-9A355A773092</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6F175242-2883-5CC7-FDB1-196646428270"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="65DFF0AF-904C-5B29-9132-89370FBE67C0" schemaObject="1908F73A-4614-D093-1B3A-CA665AAF67FD" name="DEPT_LOCATION_IX">
+<sourceConnName>Con_Andre</sourceConnName>
+<sourceObjSchema>C##ANDRE</sourceObjSchema>
+<sourceObjName>DEPT_LOCATION_IX</sourceObjName>
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<ownerDesignName>DER</ownerDesignName>
+<importedID>B0350F45-BCB4-3715-95C8-21A4405E8AA9</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0EE09B3-DE32-C2EB-176F-6EDBE7E6F71D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D3D1C3C4-AA07-1A1E-9E28-6CE1F09A2F6F" name="DEPT_LOC_FK">
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<ownerDesignName>DER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0EE09B3-DE32-C2EB-176F-6EDBE7E6F71D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DE629D3E-709B-99E5-8C71-5EC23509BAF6" name="DEPT_MGR_FK">
+<createdBy>aoliveira</createdBy>
+<createdTime>2024-08-31 20:01:06 UTC</createdTime>
+<ownerDesignName>DER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B456E8B5-653F-03B1-7F45-2BF7A31E2754"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
