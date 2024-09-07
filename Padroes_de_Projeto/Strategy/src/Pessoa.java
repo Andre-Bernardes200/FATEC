@@ -5,12 +5,12 @@ public class Pessoa {
 
     private PagamentoStrategy pag;
 
-    public Pessoa(PagamentoStrategy pagamentoStrategy) {
-        this.pag = pagamentoStrategy;
-    }
-
     public double efetuarPagamento(double valor) {
         return pag.pagar(valor);
+    }
+
+    public void setPagamento(PagamentoStrategy pagamento) {
+        this.pag = pagamento;
     }
 
 }

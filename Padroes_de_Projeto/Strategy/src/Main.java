@@ -5,11 +5,16 @@ import strategy.PagAVista;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Pessoa pessoaPagAVista = new Pessoa(new PagAVista());
+
+        Pessoa pessoaPagAVista = new Pessoa();
+
+        pessoaPagAVista.setPagamento(new PagAVista());
 
         System.out.println("Valor final com desconto R$ " + pessoaPagAVista.efetuarPagamento(1000));
 
-        Pessoa pessoaPagAPrazo= new Pessoa(new PagAPrazo());
+        Pessoa pessoaPagAPrazo= new Pessoa();
+
+        pessoaPagAPrazo.setPagamento(new PagAPrazo());
 
         System.out.println("Valor final com juros R$ " + pessoaPagAPrazo.efetuarPagamento(1000));
 
