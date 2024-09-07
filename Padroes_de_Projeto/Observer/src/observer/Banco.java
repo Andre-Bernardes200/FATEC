@@ -13,7 +13,7 @@ public class Banco{
         listaObserver.add(ob);
     }
 
-    public void deposito(double valor){
+    public void notifyObserver(double valor){
         for(BancObserver ob : listaObserver){
             ob.deposito(valor);
         }

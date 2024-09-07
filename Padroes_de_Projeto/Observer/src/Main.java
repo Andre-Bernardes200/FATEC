@@ -11,11 +11,11 @@ public class Main {
 
         banco.addOb(new Itau());
 
-        banco.deposito(100);
+        banco.notifyObserver(100);
 
         banco.addOb(new Santander());
 
-        banco.deposito(200);
+        banco.notifyObserver(200);
 
         banco.valorAtual();
     }
