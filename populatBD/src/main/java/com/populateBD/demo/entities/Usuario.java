@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table (name = "usuario")
 @AllArgsConstructor
@@ -15,10 +17,13 @@ import lombok.Setter;
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idUsuario")
     private Long id;
 
     @Column(name = "nome")
     private String nome;
 
+    @OneToMany
+    @JoinColumn(name = "id_dispositivo")
+    private List<Dispositivo> dispositivos;
 }

@@ -8,14 +8,16 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Repository
 public interface DispositivoRepository extends JpaRepository<Dispositivo, Long> {
 
     @Transactional
     @Modifying
-    @Query (value = "insert into dispositivo(nome) values (?1)", nativeQuery = true)
-    void saveDisp(String nome);
+    @Query (value = "insert into dispositivo(nome,fk_id_usuario) values (?1,?2)", nativeQuery = true)
+    void saveDisp(String nome, Long idUsuario);
 
-    @Query("select d.id from Dispositivo d where d.nome = :nome")
-    Long findIdDisp (String nome);
+    @Query("select d from Dispositivo d where d.nome = :nome and d.usuario.id = :idUsu")
+    Optional<Dispositivo> findDisp (String nome, Long idUsu);
 }

@@ -18,6 +18,7 @@ public class Localizacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_localizacao")
     private Long id;
 
     @Column(name = "latitude")
@@ -26,9 +27,13 @@ public class Localizacao {
     @Column(name = "longitude")
     private Long longitude;
 
-    @Column(name = "data-hora")
+    @Column(name = "data_hora")
     private Timestamp dataHora;
 
     @Column(name = "id_base")
     private String base;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_id_dispositivo", nullable = false)
+    private Dispositivo id_dispositivo;
 }

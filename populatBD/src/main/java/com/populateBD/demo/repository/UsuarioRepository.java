@@ -7,14 +7,16 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UsuarioRepository extends JpaRepository <Usuario, Long> {
 
     @Transactional
     @Modifying
-    @Query(value = "insert into usuario(nome) values (1?)", nativeQuery = true)
-    void saveNome(String nome);
+    @Query(value = "insert into usuario(id_usuario,nome) values (?1,?2)", nativeQuery = true)
+    void saveNome(Long id, String nome);
 
-    @Query("select u.id from Usuario u where u.nome = :nome")
-    Long findIdUsuario (String nome);
+    @Query("select u from Usuario u where u.id = :id")
+    Optional<Usuario> findUsuario (Long id);
 }
