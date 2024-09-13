@@ -18,7 +18,7 @@ public class DadosController {
 
     @PostMapping("/inserir")
     public ResponseEntity<String> insertDados(@RequestBody RequestDados caminhoTxt){
-        salvarDados.salvarDados(caminhoTxt);
+        salvarDados.salvarDadosLote(caminhoTxt);
         return ResponseEntity.ok("Dados inseridos");
     }
 }

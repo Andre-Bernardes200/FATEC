@@ -9,7 +9,8 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table (name = "usuario")
+@Table (name = "usuario",schema = "ito1")
+//@Table (name = "usuario")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -17,7 +18,7 @@ import java.util.List;
 public class Usuario {
 
     @Id
-    @Column(name = "idUsuario")
+    @Column(name = "id_usuario")
     private Long id;
 
     @Column(name = "nome")

@@ -9,7 +9,8 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "dispositivo")
+@Table(name = "dispositivo",schema = "ito1")
+//@Table(name = "dispositivo")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

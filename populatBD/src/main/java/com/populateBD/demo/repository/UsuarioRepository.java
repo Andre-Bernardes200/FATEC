@@ -14,7 +14,7 @@ public interface UsuarioRepository extends JpaRepository <Usuario, Long> {
 
     @Transactional
     @Modifying
-    @Query(value = "insert into usuario(id_usuario,nome) values (?1,?2)", nativeQuery = true)
+    @Query(value = "insert into ito1.usuario(id_usuario,nome) values (?1,?2)", nativeQuery = true)
     void saveNome(Long id, String nome);
 
     @Query("select u from Usuario u where u.id = :id")

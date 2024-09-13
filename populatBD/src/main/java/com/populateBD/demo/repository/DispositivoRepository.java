@@ -15,7 +15,7 @@ public interface DispositivoRepository extends JpaRepository<Dispositivo, Long> 
 
     @Transactional
     @Modifying
-    @Query (value = "insert into dispositivo(nome,fk_id_usuario) values (?1,?2)", nativeQuery = true)
+    @Query (value = "insert into ito1.dispositivo(nome,fk_id_usuario) values (?1,?2)", nativeQuery = true)
     void saveDisp(String nome, Long idUsuario);
 
     @Query("select d from Dispositivo d where d.nome = :nome and d.usuario.id = :idUsu")
