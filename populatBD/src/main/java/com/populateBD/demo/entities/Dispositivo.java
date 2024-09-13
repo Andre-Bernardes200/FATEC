@@ -29,8 +29,7 @@ public class Dispositivo {
     @JoinColumn(name = "fk_id_usuario", nullable = false)
     private Usuario usuario;
 
-    @OneToMany
-    @JoinColumn(name = "id_localizacao")
+    @OneToMany(mappedBy = "id_dispositivo",fetch = FetchType.EAGER)
     private List<Localizacao> localizacoes;
 }
 

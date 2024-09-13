@@ -24,7 +24,6 @@ public class Usuario {
     @Column(name = "nome")
     private String nome;
 
-    @OneToMany
-    @JoinColumn(name = "id_dispositivo")
+    @OneToMany(mappedBy = "usuario",fetch = FetchType.EAGER)
     private List<Dispositivo> dispositivos;
 }
