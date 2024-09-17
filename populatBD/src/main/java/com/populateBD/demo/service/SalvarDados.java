@@ -136,8 +136,8 @@ public class SalvarDados {
                         if(cont == 1000){
                             LocalDateTime tempoAgr = LocalDateTime.now();
                             localizacaoRepository.saveAll(loteInsert);
-                            loteInsert.clear();
                             LocalDateTime tempoDepois = LocalDateTime.now();
+                            loteInsert.clear();
 
                             Duration duracao = Duration.between(tempoAgr, tempoDepois);
                             long tempoInsercao = duracao.toMillis();
@@ -169,7 +169,7 @@ public class SalvarDados {
         if(idUsuLocalizado.isPresent()){
             return idUsuLocalizado;
         }else{
-            usuarioRepository.saveNome(idUsuario, nome);
+            usuarioRepository.saveNome(idUsuario, nome.toUpperCase());
             idUsuLocalizado = usuarioRepository.findUsuario(idUsuario);
             return idUsuLocalizado;
         }
