@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import org.example.DTO.GetHolerite;
+import org.example.DTO.HolertieMod1PrefSJC;
 import org.example.service.PrefSJCService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ public class PrefSJCController {
     private PrefSJCService prefSJCService;
 
     @GetMapping("/holeritemod1")
-    public ResponseEntity<String> getPrefSJC(@RequestBody GetHolerite camainho) {
+    public ResponseEntity<String> getPrefSJC(@RequestBody HolertieMod1PrefSJC camainho) {
 
         prefSJCService.extrairHoleriteMod1(camainho);
 

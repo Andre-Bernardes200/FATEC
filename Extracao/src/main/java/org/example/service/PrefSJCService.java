@@ -2,22 +2,19 @@ package org.example.service;
 
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.text.PDFTextStripper;
-import org.example.DTO.GetHolerite;
+import org.example.DTO.HolertieMod1PrefSJC;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.io.IOException;
 
 @Service
 public class PrefSJCService {
 
 
-    public void extrairHoleriteMod1(GetHolerite caminho) {
+    public void extrairHoleriteMod1(HolertieMod1PrefSJC request) {
         try {
             // Inicializa o PdfReader
-            PdfReader reader = new PdfReader(caminho.caminho());
+            PdfReader reader = new PdfReader(request.caminho());
 
             // Número total de páginas no PDF
             int numberOfPages = reader.getNumberOfPages();
