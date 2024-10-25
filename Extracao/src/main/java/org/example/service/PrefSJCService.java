@@ -37,6 +37,7 @@ public class PrefSJCService {
             String mes = "";
             List<Verbas> verbas = new ArrayList<>();
             Boolean salvar = false;
+            Boolean salvouVerba = false;
 
             // Loop para ler e imprimir o conteúdo de cada página
             for (int i = 1; i <= qtdPaginas; i++) {
@@ -60,7 +61,7 @@ public class PrefSJCService {
                     Pattern patternMatricula = Pattern.compile(matriculaRegex);
                     Matcher matchMatricula = patternMatricula.matcher(linha);
 
-                    String verbaRegex = "(?<codigo>\\d+/\\d+)\\s+(?<descricao>.+?)\\s+(?<competencia>\\d{2}/\\d{4})\\s+(?<quantidade>[\\d,]+%?)\\s+(?<valor>[\\d.,]+(?:%?))";
+                    String verbaRegex = "(?<codigo>\\d+/\\d+)\\s+(?<descricao>.+?)\\s+(?<competencia>\\d{2}/\\d{4})\\s+(?<quantidade>[\\d,]+%?\\s+)?(?<valor>\\d{1,3}(?:\\.\\d{3})*(?:,\\d{2}))";
                     Pattern patternVerba = Pattern.compile(verbaRegex);
                     Matcher matchVerba = patternVerba.matcher(linha);
 
@@ -85,6 +86,7 @@ public class PrefSJCService {
                         verba.setReferencia(matchVerba.group("quantidade"));
                         verba.setValor(matchVerba.group("valor"));
                         verbas.add(verba);
+                        salvouVerba = true;
                     }
 
                     if(matchSalvar.find()){
