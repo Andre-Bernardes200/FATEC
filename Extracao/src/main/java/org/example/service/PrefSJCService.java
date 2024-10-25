@@ -37,7 +37,6 @@ public class PrefSJCService {
             String mes = "";
             List<Verbas> verbas = new ArrayList<>();
             Boolean salvar = false;
-            Boolean salvouVerba = false;
 
             // Loop para ler e imprimir o conteúdo de cada página
             for (int i = 1; i <= qtdPaginas; i++) {
@@ -47,7 +46,6 @@ public class PrefSJCService {
 
                 // Extraindo o texto da página
                 String pageText = PdfTextExtractor.getTextFromPage(reader, i);
-                System.out.print(pageText);
 
                 List<String> linhas = Arrays.stream(pageText.split("\n")).toList();
 
