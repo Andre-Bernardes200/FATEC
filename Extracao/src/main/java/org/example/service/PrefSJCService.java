@@ -84,7 +84,6 @@ public class PrefSJCService {
                         verba.setReferencia(matchVerba.group("quantidade"));
                         verba.setValor(matchVerba.group("valor"));
                         verbas.add(verba);
-                        salvouVerba = true;
                     }
 
                     if(matchSalvar.find()){
