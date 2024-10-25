@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 
 @RestController
 @RequestMapping("/sjcextracao")
@@ -18,7 +20,7 @@ public class PrefSJCController {
     private PrefSJCService prefSJCService;
 
     @GetMapping("/holeritemod1")
-    public ResponseEntity<String> getPrefSJC(@RequestBody HolertieMod1PrefSJC camainho) {
+    public ResponseEntity<String> getPrefSJC(@RequestBody HolertieMod1PrefSJC camainho) throws IOException {
 
         prefSJCService.extrairHoleriteMod1(camainho);
 
