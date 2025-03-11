@@ -1,0 +1,6 @@
+projectKey=br.edu.fatec:Python-hacks-security-sample
+serverUrl=http://localhost:9000
+serverVersion=25.2.0.102705
+dashboardUrl=http://localhost:9000/dashboard?id=br.edu.fatec%3APython-hacks-security-sample
+ceTaskId=52de3a8d-829c-48e9-8693-1b60513a1dc7
+ceTaskUrl=http://localhost:9000/api/ce/task?id=52de3a8d-829c-48e9-8693-1b60513a1dc7
